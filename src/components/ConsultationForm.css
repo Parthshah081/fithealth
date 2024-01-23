@@ -1,0 +1,62 @@
+/* ConsultationForm.css */
+.consultation-form {
+    background-color: #f8f8f8;
+    padding: 50px 0;
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+  }
+  
+  input[type="checkbox"] {
+    margin-top: 10px;
+  }
+  
+  select {
+    margin-top: 5px;
+  }
+  
+  button {
+    background-color: #57a4ff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #007bff;
+  }
+  
