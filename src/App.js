@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import HeroSection from './components/HeroSection';
 import ConsultationForm from './components/ConsultationForm';
 import TestimonialsSection from './components/TestimonialsSection';
@@ -13,27 +13,43 @@ const App = () => {
   const [company, setCompany] = useState('');
   const [complaints, setComplaints] = useState('');
   const [previousExperience, setPreviousExperience] = useState(false);
-  const [doctors, setDoctors] = useState([
-    { id: 1, name: 'Dr. Smith', expertise: 'Orthopedics', city: 'New York' },
-    { id: 2, name: 'Dr. Johnson', expertise: 'Cardiology', city: 'Los Angeles' },
-    // Add more doctors as needed
-  ]);
+  // const [doctors, setDoctors] = useState([
+  //   { id: 1, name: 'Dr. Smith', expertise: 'Orthopedics', city: 'New York' },
+  //   { id: 2, name: 'Dr. Johnson', expertise: 'Cardiology', city: 'Los Angeles' },
+  //   // Add more doctors as needed
+  // ]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
-  const [testimonials, setTestimonials] = useState([
-    { id: 1, comment: 'Great experience with Fix Health!', author: 'John Doe' },
-    { id: 2, comment: 'Highly recommended services.', author: 'Jane Smith' },
-    // Add more testimonials as needed
-  ]);
+  // const [testimonials, setTestimonials] = useState([
+  //   { id: 1, comment: 'Great experience with Fix Health!', author: 'John Doe' },
+  //   { id: 2, comment: 'Highly recommended services.', author: 'Jane Smith' },
+  //   // Add more testimonials as needed
+  // ]);
+  
+  const doctors = useMemo(
+    () => [
+      { id: 1, name: 'Dr. Smith', expertise: 'Orthopedics', city: 'New York' },
+      { id: 2, name: 'Dr. Johnson', expertise: 'Cardiology', city: 'Los Angeles' },
+    ],
+    []
+  );
+
+  const testimonials = useMemo(
+    () => [
+      { id: 1, comment: 'Great experience with Fix Health!', author: 'John Doe' },
+      { id: 2, comment: 'Highly recommended services.', author: 'Jane Smith' },
+    ],
+    []
+  );
 
   // Comment to inform ESLint that these variables are intentionally not used
-  const unusedSetDoctors = setDoctors; 
-  const unusedSetTestimonials = setTestimonials;
+  // const unusedSetDoctors = setDoctors; 
+  // const unusedSetTestimonials = setTestimonials;
 
 
-  const filterDoctors = () => {
+  const filterDoctors = useCallback(() => {
     let filtered = doctors.filter(doctor => doctor.city === (city || doctor.city));
     setFilteredDoctors(filtered);
-  };
+  }, [city, doctors]);
 
   useEffect(() => {
     filterDoctors();
