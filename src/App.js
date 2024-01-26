@@ -25,14 +25,19 @@ const App = () => {
     // Add more testimonials as needed
   ]);
 
-  useEffect(() => {
-    filterDoctors();
-  }, [city, doctors]);
+  // Comment to inform ESLint that these variables are intentionally not used
+  const unusedSetDoctors = setDoctors; 
+  const unusedSetTestimonials = setTestimonials;
+
 
   const filterDoctors = () => {
     let filtered = doctors.filter(doctor => doctor.city === (city || doctor.city));
     setFilteredDoctors(filtered);
   };
+
+  useEffect(() => {
+    filterDoctors();
+  }, [city, doctors, filterDoctors]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -11,10 +11,11 @@ const HeroSection = () => {
         <button className="explore-btn">Explore Services</button>
       </div>
       <img
-        src="https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=" // Replace with your actual hero image URL
-        alt="Hero Image"
-        className="hero-image"
-      />
+  src="https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg="
+  alt="Hero"
+  className="hero-image"
+/>
+
     </section>
   );
 };
