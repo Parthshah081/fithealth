@@ -1,15 +1,15 @@
 /* TestimonialsSection.css */
 .testimonials {
-    background-color: #f8f8f8;
+    background-color: #1a1a1a;
     padding: 50px 0;
     text-align: center;
-    color: #333;
+    color: white;
   }
   
   .testimonials h2 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #333;
+    color: white;
   }
   
   .testimonial-list {
@@ -19,7 +19,7 @@
   }
   
   .testimonial {
-    background-color: #fff;
+    background-color: #1a1a1a;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 8px;

@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import ConsultationForm from './components/ConsultationForm';
 import TestimonialsSection from './components/TestimonialsSection';
 import Navbar from './components/Navbar';
+import './App.css';
 
 const App = () => {
   const [name, setName] = useState('');
